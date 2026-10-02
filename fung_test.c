@@ -26,15 +26,15 @@ mn:
         printf("please enter a valid operation\n");
         goto mn;
     }
-        return 0;
     }
+    return 0;
 }
 int add(void)
 {
     int a, b;
-    printf("number 1:\n");
+    printf("number 1: ");
     scanf("%d", &a);
-    printf("number 2:\n");
+    printf("number 2: ");
     scanf("%d", &b);
     printf("sum = %d\n", a + b);
     return 0;
@@ -42,30 +42,30 @@ int add(void)
 int sub(void)
 {
     int a, b;
-    printf("number 1:\n");
+    printf("number 1: ");
     scanf("%d", &a);
-    printf("number 2:\n");
+    printf("number 2: ");
     scanf("%d", &b);
     printf("substraction = %d\n", a - b);
     return 0;
 }
 int mul(void)
 {
-    int a, b;
-    printf("number 1:\n");
-    scanf("%d", &a);
-    printf("number 2:\n");
-    scanf("%d", &b);
-    printf("multiplacation = %d\n", a * b);
+    long int a, b;
+    printf("number 1: ");
+    scanf("%ld", &a);
+    printf("number 2: ");
+    scanf("%ld", &b);
+    printf("multiplacation = %ld\n", a * b);
     return 0;
 }
 int div(void)
 {
-    int a, b;
-    printf("number 1:\n");
-    scanf("%d", &a);
-    printf("number 2:\n");
-    scanf("%d", &b);
-    printf("division = %d\n", a / b);
+    float a, b;
+    printf("number 1: ");
+    scanf("%f", &a);
+    printf("number 2: ");
+    scanf("%f", &b);
+    printf("division = %f\n", a / b);
     return 0;
 }
