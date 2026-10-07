@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main()
+int main(void)
 {
     int n;
     printf("entr the value of n: ");
@@ -8,5 +8,6 @@ int main()
     {
         printf("%d*", n - i);
     }
+    printf("\n");
     return 0;
 }
