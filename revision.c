@@ -48,8 +48,8 @@ int sumarr(void)
             printf("%d\t", arr[i][j]);
         printf("\n\v");
     }
-mn:
     static int rows2, columns2;
+mn:
     printline();
     printf("\nenter the rows and columns you want in array 2\n");
     scanf("%d%d", &rows2, &columns2);
@@ -76,7 +76,7 @@ mn:
         for (int a = 0; a < rows2; a++)
         {
             for (int b = 0; b < columns2; b++)
-                printf("%d\t", arr2[a][b] + arr2[a][b]);
+                printf("%d\t", arr[a][b] + arr2[a][b]);
             printf("\n\v");
         }
         printline();
@@ -94,7 +94,7 @@ int quadratic(void)
     int a, b, c, d;
     double r1, r2;
 mn:
-    printf("enter the value of a:\n");
+    printf("\nenter the value of a:\n");
     scanf("%d", &a);
     printf("enter the value of b:\n");
     scanf("%d", &b);
@@ -117,8 +117,14 @@ mn:
         printf("invalid value \n please try again with valid values");
         goto mn;
     }
-    r1 = (-b + sqrt(d)) / 2 * a;
-    r2 = (-b - sqrt(d)) / 2 * a;
+    if (a == 0)
+    {
+        printf("invalid value of a (a cannot be 0)\n");
+        goto mn;
+    }
+
+    r1 = (-b + sqrt((double)d)) / (2.0 * a);
+    r2 = (-b - sqrt((double)d)) / (2.0 * a);
     printline();
     printf("\nroot 1: %lf\nroot 2: %lf\n", r1, r2);
     printline();
@@ -130,14 +136,16 @@ int calculator(void)
     char operator;
     double num1, num2, result;
 
-    printf("Enter an operator (+, -, *, /): ");
+    printf("\nEnter an operator (+, -, *, /): ");
     scanf(" %c", &operator);
+    printf("\n");
     printline();
-
+    printf("\n");
     printf("\nEnter two numbers: ");
     scanf("%lf %lf", &num1, &num2);
+    printf("\n");
     printline();
-
+    printf("\n");
     switch (operator)
     {
     case '+':
@@ -169,7 +177,7 @@ int calculator(void)
 
     default:
         printline();
-        printf("Error: Invalid operator entered.\n");
+        printf("\nError: Invalid operator entered.\n");
     }
 
     return 0;
@@ -217,8 +225,11 @@ int main(void)
     int quadratic(void);
     int sumarr(void);
 mn:
-    printf("1 to operate in string\n2 for calculator\n3 to find greatest number\n4 to find quadratic equation\n5 to sum 2 * 2d array\n");
+    printline();
+    printf("\n1 to operate in string\n2 for calculator\n3 to find greatest number\n4 to find quadratic equation\n5 to sum 2 * 2d array\n");
     scanf("%hd", &x);
+    printf("\n");
+    printline();
     switch (x)
     {
     case 1:
@@ -237,8 +248,7 @@ mn:
         sumarr();
         break;
     default:
-        printf("enter a valid input");
-        break;
+        printf("enter a valid input\n");
         goto mn;
     }
 
