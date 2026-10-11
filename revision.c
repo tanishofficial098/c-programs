@@ -94,7 +94,7 @@ int quadratic(void)
     int a, b, c, d;
     double r1, r2;
 mn:
-    printf("\nenter the value of a:\n");
+    printf("\n~enter the value of a:\n");
     scanf("%d", &a);
     printf("enter the value of b:\n");
     scanf("%d", &b);
